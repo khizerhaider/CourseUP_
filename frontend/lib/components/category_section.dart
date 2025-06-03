@@ -53,6 +53,7 @@ class _CategorySectionState extends State<CategorySection> {
     final totalNeededWidth =
         (_categories.length * estimatedTextWidth) +
         ((minGap) * (_categories.length - 1));
+    // ignore: unused_local_variable
     final useWrap = totalNeededWidth > screenWidth;
 
     return Column(
