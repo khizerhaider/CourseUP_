@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+// ignore: unused_import
 import 'package:course_up/components/header.dart';
 import 'package:course_up/components/cus_search_bar.dart';
 import 'package:course_up/components/highlighted_course.dart';
