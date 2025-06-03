@@ -70,7 +70,30 @@ router.get('/categories', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+// route to get course related to the search
+// 
+router.get('/search', async (req, res) => {
+  const { q } = req.query;  // get search query from ?q=
+  console.log('req query : ',req.query)
+  if (!q) {
+    return res.status(400).json({ message: 'Query parameter q is required' });
+  }
 
+  try {
+    // Case-insensitive search on name or description fields
+    const courses = await Course.find({
+      $or: [
+        { title: { $regex: q, $options: 'i' } },
+        { description: { $regex: q, $options: 'i' } }
+      ]
+    });
+
+    res.json(courses);
+  } catch (error) {
+    console.error('Search error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // Route: Get course details by slug
 router.get('/:slug', async (req, res) => {
@@ -116,6 +139,8 @@ router.get('/categories', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch categories' });
   }
 });
+
+
 // Route: Get videos for a course by slug
 router.get('/:slug/videos', async (req, res) => {
   try {
@@ -159,5 +184,4 @@ router.get('/:slug/videos', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch course videos' });
   }
 });
-
 module.exports = router;
