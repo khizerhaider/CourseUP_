@@ -1,0 +1,106 @@
+# === GLOBAL IGNORE ===
+.DS_Store
+*.log
+# Added env
+backend/.env
+
+# Ignore node and build dependencies
+node_modules/
+build/
+
+# Ignore media files
+backend/public/videos/
+backend/public/thumbnails/
+
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+*.lock
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+
+# === BACKEND (Node.js) ===
+/backend/node_modules/
+/backend/package-lock.json
+/backend/public/videos/
+/backend/public/thumbnails/
+
+# Ignore any log or temp files
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+# === FRONTEND (Flutter) ===
+**/build/
+**/.dart_tool/
+**/.packages
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.idea/
+**/.metadata
+**/.DS_Store
+**/pubspec.lock
+**/course_up.iml
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/App.framework
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/.symlinks/
+/ios/Flutter/.last_build_id
+**/macos/Pods/
+**/macos/Podfile.lock
+**/macos/.symlinks/
+/macos/Flutter/ephemeral/
+*/build/
+*/.dart_tool/
+*/.packages
+*/.flutter-plugins
+*/.flutter-plugins-dependencies
+*/.idea/
+*/.metadata
+*/.DS_Store
+*/pubspec.lock
+*/course_up.iml
+*/ios/Flutter/Flutter.framework
+*/ios/Flutter/Flutter.podspec
+*/ios/Flutter/App.framework
+*/ios/Pods/
+*/ios/Podfile.lock
+*/ios/.symlinks/
+/ios/Flutter/.last_build_id
+*/macos/Pods/
+*/macos/Podfile.lock
+*/macos/.symlinks/
+# Windows related
+**/windows/flutter/ephemeral/
+**/windows/.symlinks/
+
+# Linux related
+**/linux/flutter/ephemeral/
+**/linux/.symlinks/
+
+# Web related
+**/web/.dart_tool/
+
+# === MISC ===
+.idea/
+*.iml
+*.swp
+*.tmp
+*.bak
+
+# === OPTIONAL (Remove this if you want to keep them) ===
+*.lock
+
+# === VS Code ===
+.vscode/
+backend/public/videos/
+backend/public/thumbnails/
