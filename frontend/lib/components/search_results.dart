@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:course_up/components/course_card.dart';
 import 'package:course_up/components/course_list.dart';
-import 'package:course_up/components/custom_app_bar.dart';
 
 class SearchResultsList extends StatefulWidget {
   final String query;
