@@ -25,10 +25,8 @@ class CourseDetailPage extends StatelessWidget {
     return url.contains('cloudinary.com');
   }
 
-  // Helper function to build thumbnail widget
   Widget buildThumbnail(String thumbnail) {
     if (isCloudinaryUrl(thumbnail)) {
-      // Use Cloudinary URL directly
       return CachedNetworkImage(
         imageUrl: thumbnail,
         width: double.infinity,
@@ -58,7 +56,6 @@ class CourseDetailPage extends StatelessWidget {
             ),
       );
     } else {
-      // Fallback for base64 encoded images (legacy support)
       try {
         final bytes = base64Decode(thumbnail);
         return Image.memory(
@@ -137,7 +134,7 @@ class CourseDetailPage extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: kToolbarHeight + 20,
+              toolbarHeight: kToolbarHeight,
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(

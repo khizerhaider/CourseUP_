@@ -13,11 +13,20 @@ class CourseList extends StatefulWidget {
 class Course {
   final String title;
   final String thumbnail;
+  final String description;
 
-  Course({required this.title, required this.thumbnail});
+  Course({
+    required this.title,
+    required this.thumbnail,
+    required this.description,
+  });
 
   factory Course.fromJson(Map<String, dynamic> json) {
-    return Course(title: json['title'], thumbnail: json['thumbnail']);
+    return Course(
+      title: json['title'],
+      thumbnail: json['thumbnail'],
+      description: json['description'],
+    );
   }
 }
 
@@ -32,8 +41,8 @@ class _CourseListState extends State<CourseList> {
 
   Future<List<Course>> fetchCourses() async {
     final response = await http.get(
-      //Uri.parse('http://localhost:5000/api/courses'),
-      Uri.parse('http://localhost:5000/api/cloud'),
+      Uri.parse('http://localhost:5000/api/courses'),
+      //Uri.parse('http://localhost:5000/api/cloud'),
     );
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
@@ -91,6 +100,7 @@ class _CourseListState extends State<CourseList> {
                   child: CourseCard(
                     title: course.title,
                     thumbnailUrl: course.thumbnail,
+                    description: course.description,
                   ),
                 );
               },

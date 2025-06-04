@@ -65,7 +65,28 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: isFullScreen ? null : AppBar(title: const Text('Video Player')),
+      backgroundColor: const Color(0xFF0D0D2B),
+      appBar:
+          isFullScreen
+              ? null
+              : AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                toolbarHeight: kToolbarHeight,
+                flexibleSpace: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFF0D0D2B),
+                        Color.fromARGB(255, 226, 220, 255),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                ),
+                iconTheme: const IconThemeData(color: Colors.deepPurpleAccent),
+              ),
       body: Center(
         child: Stack(
           children: [

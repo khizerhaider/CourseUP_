@@ -128,6 +128,7 @@ class _CourseListState extends State<CourseList> {
                       child: CourseCard(
                         title: course.title,
                         thumbnailUrl: course.thumbnail,
+                        description: course.description,
                       ),
                     );
                   },

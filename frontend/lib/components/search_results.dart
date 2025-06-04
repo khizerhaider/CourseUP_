@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:course_up/components/course_card.dart';
 import 'package:course_up/components/course_list.dart';
+import 'package:course_up/components/custom_app_bar.dart';
 
 class SearchResultsList extends StatefulWidget {
   final String query;
@@ -23,7 +24,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
 
   Future<List<Course>> fetchSearchResults(String query) async {
     final url =
-        'http://127.0.0.1:5000/api/courses/search?q=${Uri.encodeComponent(query)}';
+        'http://localhost:5000/api/courses/search?q=${Uri.encodeComponent(query)}';
 
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
@@ -46,10 +47,27 @@ class _SearchResultsListState extends State<SearchResultsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0D0D2B),
+
       appBar: AppBar(
-        title: Text('Search Results for "${widget.query}"'),
-        leading: BackButton(),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarHeight: kToolbarHeight,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF0D0D2B), Color.fromARGB(255, 226, 220, 255)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.deepPurpleAccent),
       ),
+      //AppBar(
+      //   title: Text('Search Results for "${widget.query}"'),
+      //   leading: BackButton(),
+      // ),
       body: FutureBuilder<List<Course>>(
         future: _courses,
         builder: (context, snapshot) {
@@ -80,6 +98,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
                   child: CourseCard(
                     title: course.title,
                     thumbnailUrl: course.thumbnail,
+                    description: course.description,
                   ),
                 );
               },
