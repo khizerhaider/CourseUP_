@@ -1,72 +1,134 @@
-# Mobile App Project
+![Mockups](https://github.com/user-attachments/assets/fbe9f39b-4471-4fd0-a9c0-fdecbb6c6f95)# 📚 CourseUp - Online Learning Platform
 
-This project is a mobile application built with a Flutter frontend and a Node.js backend. The application is designed to provide a seamless user experience and efficient data handling.
+A **full-stack online learning platform** built with Flutter (frontend) and Node.js (backend). It enables users to browse, stream, and learn from a variety of courses in an intuitive mobile interface.
 
-## Project Structure
+---
 
-The project is organized into two main directories: `backend` and `frontend`.
+## 📽️ Demo
 
-### Backend
+https://userdomain.com/path/to/demo-video.mp4 <!-- Replace with actual video URL or GitHub video file link -->
 
-The backend is built using Node.js and Express. It handles API requests and manages data interactions.
+![Mockups](https://github.com/user-attachments/assets/946938d4-993e-4f23-adf4-7bf213887c9e)
+!-- Replace with actual image URL -->
 
-- `src/app.js`: The main entry point for the backend application.
-- `src/controllers/index.js`: Contains the logic for handling requests.
-- `src/routes/index.js`: Defines the API routes.
-- `src/models/index.js`: Contains the data models.
+---
 
-### Frontend
+## 🏗️ Project Architecture
 
-The frontend is developed using Flutter, providing a rich user interface for the mobile application.
+This project follows a **client-server architecture**:
 
-- `lib/main.dart`: The main entry point for the Flutter application.
-- `lib/screens/home_screen.dart`: The home screen of the application.
-- `lib/widgets/custom_widget.dart`: Custom widgets used throughout the app.
+- **Frontend**: Flutter mobile application
+- **Backend**: Node.js + Express.js REST API
 
-## Getting Started
+---
 
-### Prerequisites
+## 📁 Directory Structure
+courseup/
+├── backend/
+│ ├── src/
+│ │ ├── app.js # Express app configuration
+│ │ ├── controllers/ # Business logic
+│ │ ├── models/ # Database models
+│ │ ├── routes/ # API routes
+│ │ └── utils/ # Helper functions
+│ └── public/
+│ ├── thumbnails/ # Course thumbnails
+│ └── videos/ # Course videos
+└── frontend/
+├── lib/ # Flutter source code
+├── assets/ # App assets
+└── test/ # Unit tests
 
-- Node.js and npm installed for the backend.
-- Flutter SDK installed for the frontend.
+---
 
-### Installation
+## ✨ Features
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+- 📚 Course browsing and filtering by category
+- 📺 Video streaming with custom controls
+- 🖼️ Thumbnail management and base64 handling
+- 🔌 RESTful API integration
 
-2. Navigate to the backend directory and install dependencies:
-   ```
-   cd backend
-   npm install
-   ```
+---
 
-3. Navigate to the frontend directory and install dependencies:
-   ```
-   cd frontend
-   flutter pub get
-   ```
+## 🔗 Backend API Endpoints
 
-### Running the Application
+### 📘 Courses
+- `GET /` — Get all courses (optional category filter)
+- `GET /:slug` — Get course details by slug
+- `GET /:slug/videos` — Get videos for a specific course
 
-- To start the backend server, run:
-  ```
-  cd backend
-  node src/app.js
-  ```
+### 📂 Categories
+- `GET /categories` — Retrieve all course categories
 
-- To run the Flutter application, use:
-  ```
-  cd frontend
-  flutter run
-  ```
+---
 
-## Contributing
+## 🚀 Setup Instructions
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+### 🔧 Backend
 
-## License
+```bash
+# Navigate to backend folder
+cd backend
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+# Install dependencies
+npm install
+
+# Create a .env file and add:
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+
+# Start server
+npm start
+```
+📱 Frontend
+# Navigate to frontend folder
+cd frontend
+
+# Install Flutter dependencies
+flutter pub get
+
+# Run the app on device or emulator
+flutter run
+🧰 Technologies Used
+Backend
+
+    Node.js
+
+    Express.js
+
+    MongoDB + Mongoose (MongoDB Atlas)
+
+    Cloudinary (media hosting)
+
+Frontend
+
+    Flutter
+
+    Dart
+
+    media_kit + other Flutter plugins for video playback
+
+🤝 Contributing
+
+    Fork this repository
+
+    Create a feature branch: git checkout -b feature/YourFeature
+
+    Commit your changes: git commit -m "Add your feature"
+
+    Push to the branch: git push origin feature/YourFeature
+
+    Create a Pull Request
+
+📝 License
+
+MIT © 2025 — [YourName or Organization]
+
+---
+
+### ✅ To Finish:
+
+- Upload your **video** and **image** to:
+  - GitHub (use Git LFS if >100 MB),
+  - or a public file host (like Cloudinary, Vimeo, or your own server),
+- Replace the placeholder URLs in the `README`.

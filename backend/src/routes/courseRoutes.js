@@ -84,7 +84,8 @@ router.get('/search', async (req, res) => {
     const courses = await Course.find({
       $or: [
         { title: { $regex: q, $options: 'i' } },
-        { description: { $regex: q, $options: 'i' } }
+        { description: { $regex: q, $options: 'i' } },
+        
       ]
     });
 
@@ -131,7 +132,7 @@ router.get('/categories', async (req, res) => {
     const simplified = categories.map(c => ({
       _id: c._id,
       name: c.name,
-      //description: c.description,
+      description: c.description,
     }));
     res.status(200).json(simplified);
   } catch (err) {
