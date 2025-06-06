@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://localhost:5000/api';
+  static const String baseUrl =
+      'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api';
 
   // Fetch all courses
   static Future<List<dynamic>> fetchCourses() async {

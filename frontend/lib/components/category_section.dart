@@ -26,7 +26,9 @@ class _CategorySectionState extends State<CategorySection> {
   Future<void> fetchCategories() async {
     try {
       final response = await http.get(
-        Uri.parse('http://127.0.0.1:5000/api/courses/categories'),
+        Uri.parse(
+          'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses/categories',
+        ),
         //Uri.parse('http://localhost:5000/api/cloud/categories'),
       );
       if (response.statusCode == 200) {

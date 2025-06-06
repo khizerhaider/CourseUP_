@@ -15,7 +15,9 @@ class CourseVideosPage extends StatelessWidget {
 
   Future<List<Map<String, dynamic>>> fetchCourseVideos() async {
     final response = await http.get(
-      Uri.parse('http://127.0.0.1:5000/api/courses/$slug/videos'),
+      Uri.parse(
+        'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses/$slug/videos',
+      ),
     );
     print('Response status: ${response.body}');
     if (response.statusCode == 200) {

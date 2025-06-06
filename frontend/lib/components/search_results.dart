@@ -23,7 +23,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
 
   Future<List<Course>> fetchSearchResults(String query) async {
     final url =
-        'http://localhost:5000/api/courses/search?q=${Uri.encodeComponent(query)}';
+        'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses/search?q=${Uri.encodeComponent(query)}';
 
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
@@ -46,7 +46,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0D2B),
+      backgroundColor: const Color(0x00f0f4fd),
 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -63,10 +63,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
         ),
         iconTheme: const IconThemeData(color: Colors.deepPurpleAccent),
       ),
-      //AppBar(
-      //   title: Text('Search Results for "${widget.query}"'),
-      //   leading: BackButton(),
-      // ),
+
       body: FutureBuilder<List<Course>>(
         future: _courses,
         builder: (context, snapshot) {

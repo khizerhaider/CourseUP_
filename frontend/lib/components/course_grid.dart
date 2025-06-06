@@ -36,8 +36,8 @@ class _CourseListState extends State<CourseList> {
   Future<List<Course>> fetchCourses(String category) async {
     final url =
         category.toLowerCase() == 'all'
-            ? 'http://127.0.0.1:5000/api/courses'
-            : 'http://127.0.0.1:5000/api/courses?category=${Uri.encodeComponent(category)}';
+            ? 'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses'
+            : 'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses?category=${Uri.encodeComponent(category)}';
 
     final response = await http.get(Uri.parse(url));
 

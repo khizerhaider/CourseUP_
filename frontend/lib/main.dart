@@ -4,6 +4,7 @@ import 'package:course_up/components/courseDetails/course_detail.dart';
 import 'package:course_up/components/courseDetails/course_videos_page.dart';
 import 'package:media_kit/media_kit.dart';
 import 'package:course_up/components/search_results.dart';
+import 'package:course_up/components/splash/splash_screen.dart'; // <- Import it
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,19 +23,22 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
       debugShowCheckedModeBanner: false,
+      initialRoute: '/', // <-- Start here
       routes: {
-        '/': (context) => const HomeScreen(),
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomeScreen(),
+        // <-- Add splash screen
         '/courseDetail': (context) {
           final slug = ModalRoute.of(context)!.settings.arguments as String;
           return CourseDetailPage(slug: slug);
         },
         '/courseVideos': (context) {
-          final slug = ModalRoute.of(context)!.settings.arguments as String;
-          final courseTitle =
-              ModalRoute.of(context)!.settings.arguments as String;
-          return CourseVideosPage(slug: slug, courseTitle: courseTitle);
+          final args = ModalRoute.of(context)!.settings.arguments as Map;
+          return CourseVideosPage(
+            slug: args['slug'],
+            courseTitle: args['courseTitle'],
+          );
         },
         '/searchResults': (context) {
           final query = ModalRoute.of(context)!.settings.arguments as String;

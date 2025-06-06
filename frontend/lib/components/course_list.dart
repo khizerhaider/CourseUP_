@@ -41,7 +41,9 @@ class _CourseListState extends State<CourseList> {
 
   Future<List<Course>> fetchCourses() async {
     final response = await http.get(
-      Uri.parse('http://localhost:5000/api/courses'),
+      Uri.parse(
+        'https://7e58dbec-efe0-4d6b-91c7-a5ca0ae22534-00-2wkze85hmztxa.sisko.replit.dev/api/courses',
+      ),
       //Uri.parse('http://localhost:5000/api/cloud'),
     );
     if (response.statusCode == 200) {
