@@ -14,6 +14,8 @@ https://github.com/user-attachments/assets/0fdc213a-e472-42b0-89ca-97cd35e3fbb9
 !-- Replace with actual image URL -->
 
 ---
+## Link to the apk file
+https://drive.google.com/file/d/1BRiuHFHg5cz04REM-ehhLHsAkhYPI3Ki/view?usp=drive_link
 
 ## 🏗️ Project Architecture
 
