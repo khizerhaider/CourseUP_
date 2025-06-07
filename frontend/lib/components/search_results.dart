@@ -46,7 +46,7 @@ class _SearchResultsListState extends State<SearchResultsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0x00f0f4fd),
+      backgroundColor: const Color(0xFFF0F4FD),
 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
